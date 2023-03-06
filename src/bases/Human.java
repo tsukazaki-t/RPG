@@ -20,10 +20,16 @@ public abstract class Human extends Living {
 		target.setHp(target.getHp() - damage);
 
 		// 自分の攻撃力を1だけ減らす
-		if (offensive <= 0) {
-			offensive = 0;
+		//修正前
+		//if (offensive <= 0) {
+		//	offensive = 0;
+		//}else {
+		//	offensive = offensive- 1;
+		//}
+		if (getOffensive() <= 0) {
+			setOffensive(0);
 		}else {
-			offensive = offensive - 1;
+			setOffensive(getOffensive() - 1);
 		}
 
 		// コンソールにステータスを表示
